@@ -1,0 +1,29 @@
+const int ledMerah = 11;
+const int ledHijau = 10; 
+const int ledKuning = 12; 
+const int tombolMerah = 5; 
+const int tombolHijau = 6; 
+void setup(){ 
+pinMode(ledMerah,OUTPUT ); 
+pinMode(ledHijau,OUTPUT ); 
+pinMode(ledKuning,OUTPUT ); 
+pinMode(tombolMerah,INPUT ); 
+pinMode(tombolHijau,INPUT ); 
+} 
+void loop(){ 
+if(digitalRead(tombolMerah)==0 && digitalRead(tombolHijau)==0) { digitalWrite(ledKuning,HIGH); 
+digitalWrite(ledMerah,HIGH); 
+digitalWrite(ledHijau,HIGH);} 
+if(digitalRead(tombolMerah)==1 && digitalRead(tombolHijau)==1) { 
+digitalWrite(ledHijau,LOW); 
+digitalWrite(ledMerah,LOW); 
+digitalWrite(ledKuning,HIGH);} 
+if(digitalRead(tombolMerah)==1 && digitalRead(tombolHijau)==0) { 
+digitalWrite(ledHijau,HIGH); 
+digitalWrite(ledMerah,LOW); 
+digitalWrite(ledKuning,LOW);} 
+if(digitalRead(tombolMerah)==0 && digitalRead(tombolHijau)==1) { 
+digitalWrite(ledHijau,LOW); 
+digitalWrite(ledMerah,HIGH); 
+digitalWrite(ledKuning,LOW);} 
+}
